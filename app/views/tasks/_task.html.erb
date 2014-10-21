@@ -1,2 +1,8 @@
-<p> <b><%= task.title %></b> -- <i><%= task.description %></i> </p>
+<li>
+  <p> <b><%= task.title %></b> -- <i><%= task.description %></i> </p>
+  <%= form_for task do |form| %>
+    <%= form.hidden_field :completed, value: 1 %>
+    <%= form.submit "Complete Task" %>
+  <% end %>
+</li>
 
