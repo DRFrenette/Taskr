@@ -2,4 +2,19 @@
 
 <h3> Here are your tasks, <%= current_user.email %> </h3>
 
+<%= form_for @task do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :decription %>
+    <%= form.text_field :description %>
+  </div>
+
+  <%= form.submit %>
+<% end %>
+
 <%= render @tasks %>
+
