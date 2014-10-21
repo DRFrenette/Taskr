@@ -17,5 +17,8 @@
   <%= form.submit %>
 <% end %>
 
-<%= render @tasks %>
+<h3> These are the tasks that you've yet to complete </h3>
+<%= render @tasks.incomplete %>
+
+<h3> These are the tasks that you've completed! Woo! </h3>
 
