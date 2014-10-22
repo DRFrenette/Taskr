@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :require_login 
+
   def index
     @complete_tasks = current_user.tasks.complete
     @incomplete_tasks = current_user.tasks.incomplete
@@ -10,10 +11,19 @@ class TasksController < ApplicationController
     @task = current_user.tasks.new(task_params)
     @tasks = current_user.tasks
     if @task.save 
-      redirect_to root_path
+      render @task
     else 
-      render :index
+      render partial: "error_messages",
+      locals: { target: @task },
+      status: 422
     end
+  end
+
+  def destroy
+    @task = current_user.tasks.find(params[:id])
+    @task.destroy
+
+    redirect_to tasks_path
   end
 
   def update

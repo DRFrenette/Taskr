@@ -1,6 +1,6 @@
-<h1>Hello</h1>
+<h1> Here are your tasks, <%= current_user.email %> </h1>
 
-<h3> Here are your tasks, <%= current_user.email %> </h3>
+<div id="errors"></div>
 
 <%= render "error_messages", target: @task %>
 <%= form_for @task do |form| %>
