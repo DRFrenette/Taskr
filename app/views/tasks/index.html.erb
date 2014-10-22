@@ -18,8 +18,8 @@
 <% end %>
 
 <h3> These are the tasks that you've yet to complete </h3>
-<%= render @tasks.incomplete %>
+<ul id="incompleted_tasks_list"><%= render @incomplete_tasks %></ul>
 
 <h3> These are the tasks that you've completed! Woo! </h3>
-<%= render @tasks.complete %>
+<ul id="completed_tasks_list"><%= render @complete_tasks %></ul>
 
