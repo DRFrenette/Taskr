@@ -1,11 +1,11 @@
-<li>
+<li class="task_<%= task.id %>">
   <p> <b><%= task.title %></b> -- <i><%= task.description %></i> </p>
   <%= form_for task do |form| %>
     <%= form.hidden_field :completed, value: 1 %>
     <%= form.submit "Complete Task" %>
   <% end %>
     
-<%= form_for task, method: :delete do |form| %>
+  <%= form_for task, method: :delete, html: { class: "delete" } do |form| %>
   <%= form.submit "Delete Task" %>
 <% end %>
 </li>

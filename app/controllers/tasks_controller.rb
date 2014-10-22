@@ -23,7 +23,7 @@ class TasksController < ApplicationController
     @task = current_user.tasks.find(params[:id])
     @task.destroy
 
-    redirect_to tasks_path
+    render json: { id: @task.id }
   end
 
   def update
