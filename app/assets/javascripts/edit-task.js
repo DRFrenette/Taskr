@@ -11,7 +11,7 @@ $(function() {
 
       var currentElement = $(this)
 
-      var id = currentElement.parent().data("id")
+      var id = currentElement.parents("li").data("id")
       var object = { task: { title: currentElement.text() } }
 
       var theElement = $(this);
