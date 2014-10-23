@@ -7,7 +7,7 @@ $(function() {
       data: $(this).serialize()
     });
     conversation.done(function(deletedTask){
-      $(".task_" + deletedTask.id).fadeOut();
+      $(".task_" + deletedTask.id).fadeOut()
     });
     return false;
   });

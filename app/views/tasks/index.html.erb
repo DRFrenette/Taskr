@@ -10,16 +10,18 @@
   </div>
 
   <div>
-    <%= form.label :decription %>
+    <%= form.label :description %>
     <%= form.text_field :description %>
   </div>
 
   <%= form.submit %>
 <% end %>
 
-<h3> These are the tasks that you've yet to complete </h3>
+<h3 id="incomplete-header" data-list-id="incompleted_tasks_list"> 
+These are the tasks that you've yet to complete: </h3>
 <ul id="incompleted_tasks_list"><%= render @incomplete_tasks %></ul>
 
-<h3> These are the tasks that you've completed! Woo! </h3>
+<h3 id="complete-header" data-list-id="completed_tasks_list">
+These are the tasks that you've completed! Woo! </h3>
 <ul id="completed_tasks_list"><%= render @complete_tasks %></ul>
 
