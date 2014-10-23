@@ -1,5 +1,6 @@
 <li class="task_<%= task.id %>">
-  <p> <b><%= task.title %></b> -- <i><%= task.description %></i> </p>
+<p> <strong class="title"> <b><%= task.title %></b></strong>
+-- <i><%= task.description %></i> </p>
   <%= form_for task do |form| %>
     <%= form.hidden_field :completed, value: 1 %>
     <%= form.submit "Complete Task" %>
