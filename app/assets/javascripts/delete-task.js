@@ -1,16 +1,18 @@
 $(function() {
-  var deleteTaskForm = $("form.delete");
-  deleteTaskForm.submit(function() {
+  var deleteTask = function() {
+    var theElement = $(this);
+    var taskData = theElement.serialize();
+
     var conversation = $.ajax({
-      type: "DELETE", 
-        url: $(this).attr("action"),
-        data: $(this).serialize()
+      url: theElement.attr("action"),
+        type: "DELETE",
+        data: taskData
     });
-    conversation.done(function(deletedTask){
-      $(".task_" + deletedTask.id).fadeOut()
-    });
+
+    $(this).parent("li").fadeOut();
+
     return false;
-  });
+  };
+
+  $("body").on("submit", ".delete", deleteTask);
 });
-
-

@@ -1,36 +1,23 @@
-$(function() {
-  var completeTaskDataFromServer = function() {
-    var complete = $(this);
-    var taskData = complete.serialize();
+$(function(){
+  var completeTask = function(){
     var conversation = $.ajax({
-      type: "PATCH",
-        url: complete.attr("action"),
-        data: taskData
+      type: $(this).attr("method"),
+      url: $(this).attr("action"),
+      data: $(this).serialize()
     });
-    conversation.done(addTaskToList);
-    refreshIncompleteTaskList (complete);
-    conversation.fail(onFailure);
+
+    $(this).parent("li").fadeOut("fast");
+    conversation.done(addTaskToCompletedList);
+
     return false;
-  }
-
-  $("body").on("submit", "form.edit_task", completeTaskDataFromServer);
-
-  var refreshIncompleteTaskList = function(element){
-    element.parents(li).fadeOut();
   };
 
-  var addTaskToList = function(taskHTML) {
-    var taskList = $("#completed_tasks_list");
-    taskList.prepend(taskHTML);
-    $("#errors").html("");
-  }; 
-
-  var onFailure = function(xhr) {
-    var htmlFromServer = xhr.responseText;
-    $("#errors").html(htmlFromServer);
-    console.log("UPDATE FAILED");
+  var addTaskToCompletedList = function(html){
+    var element = $(html).hide();
+    $("#completed_tasks_list").prepend(element);
+    element.fadeIn();
   };
 
+
+  $("body").on("submit", ".complete-form", completeTask);
 });
-
-
