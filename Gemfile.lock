@@ -35,10 +35,6 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    bitters (0.10.1)
-      bourbon (>= 3.2)
-      sass (>= 3.2)
-      thor
     bourbon (3.2.3)
       sass (~> 3.2)
       thor
@@ -136,7 +132,6 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   binding_of_caller
-  bitters
   bourbon
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
