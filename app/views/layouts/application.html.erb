@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Taskr</title>
-  <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="app/assets/stylesheets/app.css">
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Taskr</title>
+    <link href='http://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="app/assets/stylesheets/app.css">
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="sign-in">
+      <% if signed_in? %>
+        <%= link_to "Sign out", session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Sign in", new_session_path %>
+        <%= link_to "Sign up", new_user_path %>
+      <% end %>
+      <p class="created-by">Created by <a href="http://www.danfrenette.com">Dan Frenette</a> 2014</p>
+    </div>
 
-  <div class="sign-in">
-    <% if signed_in? %>
-      <%= link_to "Sign out", session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign in", new_session_path %>
-      <%= link_to "Sign up", new_user_path %>
-    <% end %>
-  </div>
+    <%= yield %>
 
-  <%= yield %>
-
-</body>
+  </body>
 </html>

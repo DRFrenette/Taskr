@@ -1,0 +1,13 @@
+.logo {
+  @include outer-container;
+  @include clearfix;
+  text-align: center;
+
+  .logo-text {
+    font-size: 1200%
+  }
+}
+
+.login {
+  @include outer-container;
+}

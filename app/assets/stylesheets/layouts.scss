@@ -1,5 +1,6 @@
 body {
-  background-color: #446d44;
+  background-image:(url("chalkboard.jpg"));
+  background-size: 100%;
 }
 
 .sign-in {
@@ -25,4 +26,11 @@ body {
   @include outer-container;
   float: right;
   padding: 8em;
+}
+
+.created-by {
+  @include clearfix;
+  @include position(absolute, null 10px 5px null);
+  text-align: right;
+  
 }

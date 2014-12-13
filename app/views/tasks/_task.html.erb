@@ -1,13 +1,12 @@
 <li class="task" data-id="<%= task.id %>">
 <p> <strong class="title"><%= task.title %></strong> --
 <i><%= task.description %></i> </p>
-  <%= form_for task, html: { class: "complete-form" } do |form| %>
-    <%= form.hidden_field :completed, value: 1 %>
-    <%= form.submit "Complete Task" %>
-  <% end %>
-
-  <%= form_for task, method: :delete, html: { class: "delete" } do |form| %>
-    <%= form.submit "Delete Task" %>
-  <% end %>
+<%= form_for task, html: { class: "complete-form" } do |form| %>
+  <%= form.hidden_field :completed, value: 1 %>
+  <%= form.submit "Complete Task" %>
+<% end %>
+<%= form_for task, method: :delete, html: { class: "delete" } do |form| %>
+  <%= form.submit "Delete Task" %>
+<% end %>
 </li>
 
