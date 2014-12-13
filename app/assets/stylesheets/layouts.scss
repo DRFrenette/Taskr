@@ -1,0 +1,28 @@
+body {
+  background-color: #446d44;
+}
+
+.sign-in {
+  float: right;
+}
+
+.task-form {
+  @include outer-container;
+  @include position(relative, 3em null null 3em);
+}
+
+#incomplete-header {
+  margin: 5px;
+}
+
+.i-tasks-list {
+  @include outer-container;
+  float: left;
+  padding: 8em;
+}
+
+.c-tasks-list {
+  @include outer-container;
+  float: right;
+  padding: 8em;
+}

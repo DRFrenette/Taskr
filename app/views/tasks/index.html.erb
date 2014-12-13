@@ -3,7 +3,7 @@
 <div id="errors"></div>
 
 <%= render "error_messages", target: @task %>
-<%= form_for @task do |form| %>
+<%= form_for @task, html: { class: "task-form" } do |form| %>
   <div>
     <%= form.label :title %>
     <%= form.text_field :title %>
@@ -17,11 +17,15 @@
   <%= form.submit %>
 <% end %>
 
-<h3 id="incomplete-header" data-list-id="incompleted_tasks_list"> 
-These are the tasks that you've yet to complete: </h3>
-<ul id="incompleted_tasks_list"><%= render @incomplete_tasks %></ul>
+<div class="i-tasks-list" >
+  <h3 id="incomplete-header" data-list-id="incompleted_tasks_list"> 
+    These are the tasks that you've yet to complete: </h3>
+  <ul id="incompleted_tasks_list"><%= render @incomplete_tasks %></ul>
+</div>
 
-<h3 id="complete-header" data-list-id="completed_tasks_list">
-These are the tasks that you've completed! Woo! </h3>
-<ul id="completed_tasks_list"><%= render @complete_tasks %></ul>
+<div class="c-tasks-list" >
+  <h3 id="complete-header" data-list-id="completed_tasks_list">
+    These are the tasks that you've completed! Woo! </h3>
+  <ul id="completed_tasks_list"><%= render @complete_tasks %></ul>
+</div>
 

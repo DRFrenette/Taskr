@@ -14,3 +14,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'monban-generators'
 gem 'bourbon'
 gem 'neat'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
