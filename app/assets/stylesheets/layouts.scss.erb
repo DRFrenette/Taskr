@@ -1,5 +1,5 @@
 body {
-  background-image:(url("chalkboard.jpg"));
+  background-image: url(asset-path("chalkboard.jpg"));
   background-size: 100%;
 }
 
@@ -30,7 +30,6 @@ body {
 
 .created-by {
   @include clearfix;
-  @include position(absolute, null 10px 5px null);
+  @include position(relative, null 10px 5px null);
   text-align: right;
-  
 }
