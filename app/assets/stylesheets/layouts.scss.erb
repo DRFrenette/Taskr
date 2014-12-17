@@ -1,5 +1,7 @@
+//= depend_on_asset "chalkboard.jpg"
+
 body {
-  background-image:(url("chalkboard.jpg"));
+  background-image:url("<%= asset_path("chalkboard.jpg") %>");
   background-size: 100%;
 }
 
@@ -32,5 +34,4 @@ body {
   @include clearfix;
   @include position(absolute, null 10px 5px null);
   text-align: right;
-  
 }
